@@ -65,10 +65,14 @@ export default new Vuex.Store({
         .then(res => {
           context.commit('ADD_BOOKS', res.result);
           context.commit('SEARCH_STATUS', false);
+        })
+        .catch(() => {
+          context.commit('SEARCH_STATUS', false);
         });
     },
     searchRelatedBooks: (context, book) => {
       context.commit('CLEAR_RELATED_BOOKS');
+      context.commit('SEARCH_STATUS', true);
       //console.log('find books similar to '+book.id);
       fetch(
         `https://openwhisk.ng.bluemix.net/api/v1/web/rcamden%40us.ibm.com_My%20Space/goodreads/findSimilar.json?id=${encodeURIComponent(
@@ -78,6 +82,10 @@ export default new Vuex.Store({
         .then(res => res.json())
         .then(res => {
           context.commit('ADD_RELATED_BOOKS', res.result);
+          context.commit('SEARCH_STATUS', false);
+        })
+        .catch(() => {
+          context.commit('SEARCH_STATUS', false);
         });
     },
     removeLink: (context, link) => {

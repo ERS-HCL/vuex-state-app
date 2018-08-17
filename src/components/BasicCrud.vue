@@ -93,6 +93,7 @@ ul li {
 
 input {
   border: none;
+  border-radius: 15px;
   padding: 20px;
   width: calc(100% - 40px);
   box-shadow: 0 5px 5px lightgrey;
