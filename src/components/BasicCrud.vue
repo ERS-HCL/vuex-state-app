@@ -24,7 +24,7 @@
 import { mapState, mapMutations, mapActions } from 'vuex';
 import Stats from '@/components/Stats.vue';
 export default {
-  name: 'HelloWorld',
+  name: 'BasicCrud',
   data() {
     return {
       newLink: ''
@@ -101,6 +101,7 @@ input {
 }
 
 .rm {
+  border-radius: 15px;
   float: right;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -109,5 +110,10 @@ input {
   padding: 5px;
   color: #ff0076;
   cursor: pointer;
+}
+
+.rm:hover {
+  background: #ff0076;
+  color: white;
 }
 </style>

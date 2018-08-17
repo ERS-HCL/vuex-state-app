@@ -1,9 +1,9 @@
 <template>
-<div class="stats">
-    <h1>A different component</h1>
+<div>
+    <h1>Remove All Links</h1>
     <p>There are currently {{ countLinks }} links</p>
 
-    <button v-on:click="removeAllLinks">Remove all links</button>
+    <button v-on:click="removeAllLinks" class="stats-btn">Remove all links</button>
     <p>{{ msg }}</p>
   </div>
 </template>
@@ -33,14 +33,21 @@ export default {
 };
 </script>
 
-<style scoped>
-button {
+<style>
+.stats-btn {
   padding: 10px;
+  border-radius: 25px;
   margin-top: 30px;
+  margin: 10px;
   width: 100%;
   background: none;
   border: 1px solid lightgray;
   outline: 0;
   cursor: pointer;
+}
+
+.stats-btn:hover {
+  color: white;
+  background: black;
 }
 </style>
