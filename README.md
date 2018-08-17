@@ -1,4 +1,4 @@
-# vue2-state-app
+# vuex-state-app
 
 This is a sample app based on learning from various sources on Vue + VueX + REST APIs.
 There are two demos available
