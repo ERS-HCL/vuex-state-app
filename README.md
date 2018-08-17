@@ -1,5 +1,7 @@
 # vue2-state-app
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tsukhu/vuex-state-app.svg)](https://greenkeeper.io/)
+
 ## Project setup
 
 ```
