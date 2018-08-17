@@ -6,6 +6,7 @@
     </form>
     <br clear="left">
     <div v-if="searching"><i>Searching...</i></div>
+    <div v-if="searchError"><i>Unable to search right now , please try again later ...</i></div>
   </div>
   <div class="allResults">
     <div v-if="books.length" class="result" >
@@ -63,7 +64,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['books', 'relatedBooks', 'searching'])
+    ...mapState(['books', 'relatedBooks', 'searching', 'searchError'])
   }
 };
 </script>
