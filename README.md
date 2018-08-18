@@ -7,7 +7,7 @@ There are two demos available
     * Modified version of the post by [Raymond Camden](https://www.raymondcamden.com/2018/01/05/another-example-of-vuejs-and-vuex-an-api-wrapper
         - Upgraded to use the newer techniques of using Vuex 3
         - Error handling
-        - Usage of axios instead of fetch
+        - Usage of unfetch
         - Add skeleton ui to improve user perceived performance (WIP)
 
 ## Project setup

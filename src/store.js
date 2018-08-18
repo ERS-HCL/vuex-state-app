@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import fetch from 'unfetch'
 
 Vue.use(Vuex);
 
