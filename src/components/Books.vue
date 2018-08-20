@@ -1,12 +1,10 @@
 <template>
-<div>
+<div class="books">
   <div class="searchBox">
     <form @submit.prevent="doSearch">
       <input v-model="search" type="search" placeholder="Enter the book search term (e.g. India,Sports etc).">
     </form>
-    <br clear="left">
-    <div v-if="searching"><i>Searching...</i></div>
-    <div v-if="searchError"><i>Unable to search right now , please try again later ...</i></div>
+   
   </div>
   <div class="allResults">
     <div v-if="books.length" class="result" >
@@ -16,10 +14,12 @@
         <img :src="book.image_url" class="bookResult" @click="findSimilar(book)">
         {{book.title}}
       </div>
-    </div>
+    </div> 
     <div v-else class="result placeholder" >
-      <h2>Find books</h2>
-      </div>
+      <div v-if="searching"><h2>Find books</h2><BookSkeleton v-bind:skCount="2"></BookSkeleton></div>
+      <div v-else ><h2>Find books</h2></div>
+      <div v-if="searchError"><i>Unable to search right now , please try again later ...</i></div>
+    </div>
 
     <div v-if="relatedBooks.length" class="result" >
       <h2>Books Related to {{ selectedBook.title }}</h2>
@@ -29,7 +29,9 @@
       </div>
     </div>
     <div v-else class="result placeholder" >
-      <h2>Find book selection based recommendations</h2>
+      <div v-if="searchingRelated"><h2>Find book selection based recommendations</h2><BookSkeleton v-bind:skCount="2"></BookSkeleton></div>
+      <div v-else ><h2>Find book selection based recommendations</h2></div>
+      <div v-if="searchError"><i>Unable to search right now , please try again later ...</i></div>
     </div>
 
   </div>
@@ -41,16 +43,24 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import BookSkeleton from '@/components/BookSkeleton.vue';
+
+const defaultBook = {
+  name: 'India',
+  id: 45195
+};
 export default {
   name: 'Books',
   data() {
     return {
-      search: '',
-      selectedBook: null
+      search: defaultBook.name,
+      selectedBook: defaultBook
     };
   },
   created() {
     this.clearAllBooks();
+    this.searchBooks(this.search);
+    this.searchRelatedBooks(this.selectedBook);
   },
   methods: {
     ...mapActions(['searchBooks', 'searchRelatedBooks', 'clearAllBooks']),
@@ -64,12 +74,25 @@ export default {
     }
   },
   computed: {
-    ...mapState(['books', 'relatedBooks', 'searching', 'searchError'])
+    ...mapState([
+      'books',
+      'relatedBooks',
+      'searching',
+      'searchingRelated',
+      'searchError'
+    ])
+  },
+  components: {
+    BookSkeleton
   }
 };
 </script>
 
 <style scoped>
+.books {
+  display: block;
+}
+
 div.bookResult {
   clear: left;
 }
@@ -86,13 +109,15 @@ img.bookResult {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 10px;
+  margin-top: 10px;
+  margin: 5px;
 }
 
 .allResults {
   display: flex;
   padding: 10px;
-  margin: 0px;
+  padding-top: 0;
+  margin-top: 0px;
 }
 
 .allResults .result {

@@ -9,6 +9,7 @@ export default new Vuex.Store({
     books: [],
     relatedBooks: [],
     searching: false,
+    searchingRelated: false,
     searchError: false,
     title: 'Basic CRUD Sample',
     links: [
@@ -32,6 +33,9 @@ export default new Vuex.Store({
     SEARCH_STATUS: (state, bool) => {
       state.searching = bool;
     },
+    SEARCH_RELATED_STATUS: (state, bool) => {
+      state.searchingRelated = bool;
+    },
     SEARCH_ERROR: (state, bool) => {
       state.searchError = bool;
     },
@@ -54,6 +58,7 @@ export default new Vuex.Store({
   actions: {
     clearAllBooks: context => {
       context.commit('SEARCH_STATUS', false);
+      context.commit('SEARCH_RELATED_STATUS', false);
       context.commit('SEARCH_ERROR', false);
       context.commit('CLEAR_BOOKS');
       context.commit('CLEAR_RELATED_BOOKS');
@@ -85,7 +90,7 @@ export default new Vuex.Store({
     },
     searchRelatedBooks: (context, book) => {
       context.commit('CLEAR_RELATED_BOOKS');
-      context.commit('SEARCH_STATUS', true);
+      context.commit('SEARCH_RELATED_STATUS', true);
       context.commit('SEARCH_ERROR', false);
       //console.log('find books similar to '+book.id);
       fetch(
@@ -97,14 +102,14 @@ export default new Vuex.Store({
         .then(
           res => {
             context.commit('ADD_RELATED_BOOKS', res.result);
-            context.commit('SEARCH_STATUS', false);
+            context.commit('SEARCH_RELATED_STATUS', false);
           },
           () => {
             context.commit('SEARCH_ERROR', true);
           }
         )
         .catch(() => {
-          context.commit('SEARCH_STATUS', false);
+          context.commit('SEARCH_RELATED_STATUS', false);
           context.commit('SEARCH_ERROR', true);
         });
     },
