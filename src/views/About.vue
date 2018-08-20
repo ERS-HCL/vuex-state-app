@@ -1,8 +1,9 @@
 <template>
   <div class="card">
       <div class="container">
-    <h4><b>vuex-state-app</b></h4> 
-    <p>Sample app to demonstrate usage of Vuex</p> 
+    <div><h4><b>vuex-state-app</b></h4> 
+    <p>Sample app to demonstrate usage of Vuex</p>
+    </div> 
   </div>
   </div>
 </template>
