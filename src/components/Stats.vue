@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="stats">
     <h1>Remove All Links</h1>
     <p>There are currently {{ countLinks }} links</p>
 
@@ -34,12 +34,16 @@ export default {
 </script>
 
 <style>
+.stats {
+  display: block;
+  align-items: center;
+  text-align: center;
+}
 .stats-btn {
   padding: 10px;
   border-radius: 25px;
   margin-top: 30px;
-  margin: 10px;
-  width: 100%;
+  width: 90%;
   background: none;
   border: 1px solid lightgray;
   outline: 0;

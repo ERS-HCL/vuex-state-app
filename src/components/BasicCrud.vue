@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="container">
     <div class="left">
       <h1>{{ title }}</h1>
       <!-- Add the form here -->
@@ -63,17 +63,16 @@ body {
   height: 100%;
 }
 
-.hello {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-rows: 100%;
-  grid-template-areas: 'left right';
-  height: 100%;
+.container {
+  display: flex;
+  padding: 10px;
 }
 
-.left,
+.container .left,
 .right {
-  padding: 30px;
+  flex: 1;
+  width: 0;
+  margin-right: 10px;
 }
 
 ul {
@@ -87,8 +86,8 @@ ul li {
 }
 
 .right {
-  grid-area: right;
   background-color: #e9e9e9;
+  margin-right: 0;
 }
 
 input {

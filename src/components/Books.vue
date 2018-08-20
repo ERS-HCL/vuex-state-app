@@ -86,12 +86,11 @@ img.bookResult {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 0px;
+  margin: 10px;
 }
 
 .allResults {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
   padding: 10px;
   margin: 0px;
 }
@@ -99,6 +98,8 @@ img.bookResult {
 .allResults .result {
   padding: 10px;
   background: white;
+  flex: 1;
+  width: 0;
 }
 
 .placeholder {
