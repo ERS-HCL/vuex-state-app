@@ -3,7 +3,7 @@
     <h1>Remove All Links</h1>
     <p>There are currently {{ countLinks }} links</p>
 
-    <button v-on:click="removeAllLinks" class="stats-btn">Remove all links</button>
+    <button v-on:click="removeAllLinks" class="stats-btn" data-cy="removeall-btn">Remove all links</button>
     <p>{{ msg }}</p>
   </div>
 </template>

@@ -51,8 +51,7 @@ describe('Crud tests', () => {
     });
 
     it('removes all entries', () => {
-      cy.get('.stats-btn').click();
-
+      cy.get('[data-cy=removeall-btn]').click();
       cy.get('.url-list li').should('have.length', 0);
 
       cy.contains('There are currently 0 links');

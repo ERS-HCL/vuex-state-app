@@ -10,7 +10,7 @@
       <ul class="url-list">
         <li v-for="(link, index) in links" v-bind:key="index">
           {{link}}
-          <button v-on:click="removeLinks(index)" class="rm">Remove</button>
+          <button v-on:click="removeLinks(index)" class="rm" >Remove</button>
           </li>
       </ul>
     </div>

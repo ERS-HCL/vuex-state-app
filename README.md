@@ -58,3 +58,13 @@ e.g. set CYPRESS_INSTALL_BINARY=e:\cypress.zip
 - Set HTTP_PROXY,HTTPS_PROXY if behind the corporate firewall
 
 set HTTP_PROXY=[proxy url]
+
+### Launch Cypress console
+
+```
+npm run test:integration
+```
+
+#### Sample cypress test execution
+
+![cypress_run](./public/Cypress_crud.gif)
