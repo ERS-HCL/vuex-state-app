@@ -40,3 +40,21 @@ npm run lint
 
 ![loading](public/loading.PNG)
 ![loaded](public/loaded.PNG)
+
+### Cypress Windows installation
+
+- Currently windows 64x is not supported so we need to use a workaround to use the win32 binaries of cypress
+
+- Manually download and unzip Cypress binary for win32 https://download.cypress.io/desktop/3.1.0?platform=win32
+
+- Set binary download to false
+
+set CYPRESS_INSTALL_BINARY=[Full Path of cypress.zip]
+
+e.g. set CYPRESS_INSTALL_BINARY=e:\cypress.zip
+
+- npm i -D cypress
+
+- Set HTTP_PROXY,HTTPS_PROXY if behind the corporate firewall
+
+set HTTP_PROXY=[proxy url]

@@ -5,9 +5,9 @@
       <!-- Add the form here -->
 
       <form @submit.prevent="addLink">
-        <input class="link-input" type="text" placeholder="Add a Link" v-model="newLink" />
+        <input class="link-input" type="text" autoFocus placeholder="Add a Link" v-model="newLink" />
       </form>
-      <ul>
+      <ul class="url-list">
         <li v-for="(link, index) in links" v-bind:key="index">
           {{link}}
           <button v-on:click="removeLinks(index)" class="rm">Remove</button>
