@@ -48,7 +48,7 @@ npm run lint
 
 - Manually download and unzip Cypress binary for win32 https://download.cypress.io/desktop/3.1.0?platform=win32
 
-- Set binary download to false
+- Set cypress install binary path so that the cypress install skips it
 
 set CYPRESS_INSTALL_BINARY=[Full Path of cypress.zip]
 
