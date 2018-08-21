@@ -9,6 +9,7 @@ There are two demos available
   - Error handling
   - Usage of unfetch
   - Add skeleton ui to improve user perceived performance
+  - Cypress.io Integration
 
 ## Project setup
 
