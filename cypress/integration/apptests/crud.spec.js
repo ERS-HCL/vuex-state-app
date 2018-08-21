@@ -57,4 +57,22 @@ describe('Crud tests', () => {
       cy.contains('There are currently 0 links');
     });
   });
+
+  context('Form submission', () => {
+    before(() => {
+      cy.server();
+    });
+
+    it('load data from fixtures', () => {
+      cy.fixture('crud').then(json => {
+        json.map(item => {
+          cy.get('.link-input')
+            .clear()
+            .type(item.url)
+            .type('{enter}');
+        });
+        cy.get('.url-list li').should('have.length', 6);
+      });
+    });
+  });
 });
