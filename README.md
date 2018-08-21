@@ -50,15 +50,25 @@ npm run lint
 
 - Set cypress install binary path so that the cypress install skips it
 
+```
 set CYPRESS_INSTALL_BINARY=[Full Path of cypress.zip]
+```
 
+```
 e.g. set CYPRESS_INSTALL_BINARY=e:\cypress.zip
+```
 
-- npm i -D cypress
+- Install cypress (Skip the above step for non windows machines)
+
+```
+npm i -D cypress
+```
 
 - Set HTTP_PROXY,HTTPS_PROXY if behind the corporate firewall
 
+```
 set HTTP_PROXY=[proxy url]
+```
 
 ### Launch Cypress console
 
