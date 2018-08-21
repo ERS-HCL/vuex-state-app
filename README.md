@@ -9,7 +9,7 @@ There are two demos available
   - Error handling
   - Usage of unfetch
   - Add skeleton ui to improve user perceived performance
-  - Cypress.io Integration
+  - Cypress.io Integration and IDE configuration for intellisense
 
 ## Project setup
 
