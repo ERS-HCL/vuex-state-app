@@ -3,8 +3,8 @@
     <h1>Remove All Links</h1>
     <p>There are currently {{ countLinks }} links</p>
 
-    <button v-on:click="removeAllLinks" class="stats-btn" data-cy="removeall-btn">Remove all links</button>
-    <p>{{ msg }}</p>
+    <button v-on:click="removeAllLinks" class="stats-btn" data-cy="removeall-btn" :disabled="countLinks == 0">Remove all links</button>
+    <p v-if="countLinks == 0">{{ msg }}</p>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
     ...mapActions(['removeAll']),
     removeAllLinks() {
       this.removeAll().then(() => {
-        this.msg = 'They have been removed';
+        this.msg = 'All links have been removed';
       });
     }
   }

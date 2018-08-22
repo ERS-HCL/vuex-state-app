@@ -7,7 +7,7 @@
    
   </div>
   <div class="allResults">
-    <div v-if="books.length" class="result" >
+    <div v-if="Object.keys(books).length" class="result" >
       <h2>Results</h2>
       <p><i>Click the cover to find similar books...</i></p>
       <div v-for="(book,index) in books" class="bookResult" v-bind:key="index">

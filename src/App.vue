@@ -12,9 +12,9 @@
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Nunito');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 #app {
-  font-family: 'Nunito', 'Fira Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .menu {
   justify-content: center;
