@@ -46,12 +46,12 @@ npm run lint
 
 - Currently windows 64x is not supported so we need to use a workaround to use the win32 binaries of cypress
 
-- Manually download and unzip Cypress binary for win32 https://download.cypress.io/desktop/3.1.0?platform=win32
+- Manually download the Cypress binary for win32 https://download.cypress.io/desktop/3.1.0?platform=win32
 
 - Set cypress install binary path so that the cypress install skips it
 
 ```
-set CYPRESS_INSTALL_BINARY=[Full Path of cypress.zip]
+set CYPRESS_INSTALL_BINARY=[Full Path of the downloaded cypress.zip]
 ```
 
 ```
