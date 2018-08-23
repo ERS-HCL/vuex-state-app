@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:integration": "cypress open"
+    "test:integration": "concurrent --kill-others --success first \"npm run serve\" \"wait-port localhost:8080 && cypress open",
+    "test:ci": "concurrent --kill-others --success first \"npm run serve\" \"wait-port localhost:8080 && cypress run"
   },
   "dependencies": {
     "unfetch": "^3.1.1",
@@ -19,19 +20,18 @@
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-plugin-eslint": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
+    "concurrently": "^3.6.1",
     "cypress": "^3.1.0",
     "eslint-plugin-cypress": "^2.0.1",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "wait-port": "^0.2.2"
   },
   "eslintConfig": {
     "root": true,
     "env": {
       "node": true
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
+    "extends": ["plugin:vue/essential", "eslint:recommended"],
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
@@ -42,9 +42,5 @@
       "autoprefixer": {}
     }
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
 }

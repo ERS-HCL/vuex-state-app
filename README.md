@@ -72,6 +72,8 @@ set HTTP_PROXY=[proxy url]
 
 ### Launch Cypress console
 
+- This will also start the vue app in dev mode
+
 ```
 npm run test:integration
 ```
